@@ -7,6 +7,8 @@ void setup() {
 var leftX = 45;
 var rightX = 370;
 var sunRadius = 100;
+var suny=100;
+var shade=0;
 
 
 //🟢Draw Function - Runs on Repeat
@@ -14,11 +16,15 @@ draw = function(){
   noStroke()
 
   //Shapes and Color Go Here
-  background(184, 236, 255);
-
+  background(184+shade, 236+shade, 255+shade);
+  
   // sun
   fill(255, 170, 0);
-  ellipse(200, 100, sunRadius, sunRadius);
+  ellipse(200, suny, sunRadius, sunRadius);
+  //x=x+1
+ // y=y-2
+ // sunRadius=sunRadius* 99/100;
+ // sunRadius=sunRadius* 99/100;
 
   // clouds 
   fill(255, 255, 255);
@@ -33,6 +39,13 @@ draw = function(){
   ellipse(rightX+62, 100, 70, 60);
   ellipse(rightX-62, 100, 70, 60);
   
+suny=suny-1
+rightX=rightX-1
+leftX=leftX+1
+shade-=1
+
+
+
 }
 
 
